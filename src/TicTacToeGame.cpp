@@ -20,13 +20,13 @@ void TicTacToeGame::playGame() {
     char player2 = 'O';
 
     char currentPlayer = player1;
-    bool isDone = false;
+    bool done = false;
 
     int x, y;
 
     int turn = 0;
 
-    while (!isDone) {
+    while (!done) {
         printBoard();
 
         std::cout << currentPlayerMessage(currentPlayer, player1, player2) << std::endl;
@@ -43,11 +43,11 @@ void TicTacToeGame::playGame() {
                 printBoard();
                 std::string winningPlayer = (currentPlayer == player1) ? "Player 1" : "Player 2";
                 std::cout << "The game is over! " << winningPlayer << " has won!\n";
-                isDone = true;
+                done = true;
             } else if (turn == 9) {
                 printBoard();
                 std::cout << "It's a tie game!\n";
-                isDone = true;
+                done = true;
             }
 
             // switch players
